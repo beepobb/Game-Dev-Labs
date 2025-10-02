@@ -1,9 +1,8 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerMovement : MonoBehaviour
+public class MarioInput : MonoBehaviour
 {
     [SerializeField] private float speed = 10;
     [SerializeField] private float maxSpeed = 20;
@@ -14,38 +13,22 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInputActions;
     private Rigidbody2D marioBody;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI gameOverScoreText;
-    public GameObject restartButton;
     public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba;
-    public GameObject gameOverPanel;
-    public AudioSource backgroundMusic;
-    public AudioSource gameOverMusic;
-
-    // Jump related stuff
-    [SerializeField, Tooltip("Maximum number of jumps allowed")] private int maxJumps = 2;
-    private int jumpCount = 0;
 
     // Start is called before the first frame update
 
     void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.gameObject.CompareTag("Ground")) {
-            jumpCount = 0;
-            onGroundState = true;
-        }
-        
+        if (collision2D.gameObject.CompareTag("Ground")) onGroundState = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Collided with goomba!");
             Time.timeScale = 0.0f;
-            backgroundMusic.Stop();
-            gameOverMusic.Play();
-            GameOver();
         }
     }
 
@@ -83,7 +66,11 @@ public class PlayerMovement : MonoBehaviour
             marioBody.linearVelocity = new Vector2(0, marioBody.linearVelocity.y);
         }
 
-        
+        if (playerInputActions.Player.Jump.triggered && onGroundState)
+        {
+            marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
+            onGroundState = false;
+        }
     }
 
     void Update()
@@ -99,31 +86,16 @@ public class PlayerMovement : MonoBehaviour
             faceRightState = true;
             marioSprite.flipX = false;
         }
-
-        if (playerInputActions.Player.Jump.triggered && (onGroundState || jumpCount < maxJumps))
-        {
-            marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
-            onGroundState = false;
-            jumpCount++;
-        }
     }
 
     public void RestartButtonCallback(int input)
     {
+        Debug.Log("Restart!");
         // reset everything
         ResetGame();
         // resume time
         Time.timeScale = 1.0f;
     }
-
-    public void GameOver()
-    {
-        gameOverScoreText.text = "Score: " + jumpOverGoomba.score;
-        gameOverPanel.SetActive(true);
-        restartButton.SetActive(true);
-        scoreText.gameObject.SetActive(false);
-    }
-
     public void ResetGame()
     {
         // reset position
@@ -140,10 +112,5 @@ public class PlayerMovement : MonoBehaviour
         }
         // reset score
         jumpOverGoomba.score = 0;
-        // hide game over text and button
-        gameOverPanel.SetActive(false);
-        restartButton.SetActive(false);
-        scoreText.gameObject.SetActive(true);
-        backgroundMusic.Play();
     }
 }
