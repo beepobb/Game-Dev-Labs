@@ -34,7 +34,6 @@ public class BaseBlock : MonoBehaviour
     {
         if (used) return;
         BounceBlock();
-        SpawnCoin();
         used = true;
     }
 

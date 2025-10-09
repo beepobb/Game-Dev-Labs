@@ -3,6 +3,7 @@ using TMPro;
 
 public class JumpOverGoomba : MonoBehaviour
 {
+    GameManager gameManager;
     public Transform enemyLocation;
     public TextMeshProUGUI scoreText;
     private bool onGroundState;
@@ -14,34 +15,21 @@ public class JumpOverGoomba : MonoBehaviour
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
-    private PlayerInput playerInputActions;
-    void Awake()
-    {
-        playerInputActions = new PlayerInput();
-    }
 
     void Start()
     {
-        playerInputActions.Player.Enable();
+        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
     }
 
     void FixedUpdate()
     {
-        // mario jumps
-        if (playerInputActions.Player.Jump.triggered && OnGroundCheck())
-        {
-            onGroundState = false;
-            countScoreState = true;
-        }
-
         // when jumping, and Goomba is near Mario and we haven't registered our score
         if (!onGroundState && countScoreState)
         {
             if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.5f)
             {
                 countScoreState = false;
-                score++;
-                scoreText.text = "Score: " + score.ToString();
+                gameManager.IncreaseScore(1);
             }
         }
     }

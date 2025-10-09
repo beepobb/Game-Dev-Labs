@@ -10,12 +10,11 @@ public class QuestionBlock : BaseBlock
 
     protected override void HitFromBelow()
     {
-        if (used) return;
-
         if (blockAnimator) blockAnimator.enabled = false; // disable first
         if (blockRenderer) blockRenderer.sprite = usedBlockSprite;
 
-        base.HitFromBelow(); // then call base to bounce/spawn coin
+        if (!used) SpawnCoin();
+        base.HitFromBelow();
     }
 
     public override void ResetBlock()

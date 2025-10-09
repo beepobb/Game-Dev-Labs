@@ -106,7 +106,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1906577023895336629}
   - component: {fileID: 3138661349266066463}
-  - component: {fileID: 481075361605028110}
   m_Layer: 0
   m_Name: brick
   m_TagString: Untagged
@@ -187,21 +186,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &481075361605028110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5444172170643643819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63cc195d3f60645daaae296d3acd135b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlockPhysics
-  coinAnimator: {fileID: 7243492258931241628}
-  coinSpawnAudio: {fileID: 6502354461119008496}
-  hasCoin: 0
 --- !u!1 &8993516389616678380
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +198,7 @@ GameObject:
   - component: {fileID: 5087206065160202348}
   - component: {fileID: 7243492258931241628}
   - component: {fileID: 6502354461119008496}
+  - component: {fileID: 7033555188704258789}
   m_Layer: 0
   m_Name: coin
   m_TagString: Untagged
@@ -413,3 +398,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7033555188704258789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8993516389616678380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b2f6fa97594c19a450a659805c65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventIntTool
+  parameter: 1
+  useInt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -6,12 +6,11 @@ public class NormalBlock : BaseBlock
     [SerializeField] private bool hasCoin;
     protected override void HitFromBelow()
     {
-        if (used) return;
-        BounceBlock();
-        if (hasCoin)
+        if (hasCoin && !used)
         {
+            Debug.Log("Spawning coin...");
             SpawnCoin();
         }
-        used = true;
+        base.HitFromBelow();
     }
 }
