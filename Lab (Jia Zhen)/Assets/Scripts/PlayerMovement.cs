@@ -176,10 +176,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") & alive)
         {
-            // TODO: check that goomba is not stomped on
             Debug.Log("Collided with goomba!");
-
-            Die();
+            // TODO: check that goomba is not stomped on i.e. still alive
+            // If goomba is alive, mario dies from side collision
+            // Get goomba's alive state
+            Goomba goomba = other.gameObject.GetComponent<Goomba>();
+            Debug.Log("Goomba alive state: " + (goomba != null ? goomba.GetAliveState().ToString() : "Goomba component not found"));
+            if (goomba != null && goomba.GetAliveState())
+            {
+                Die();
+            }
         }
     }
 
