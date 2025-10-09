@@ -197,6 +197,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-1548616429353298868
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GoombaDeath
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 2d81126031f5dff4d89e9a290983c27a
+  m_Children: []
+  m_Volume: 33fe0ad1e50873f4db1f324a61e1aa36
+  m_Pitch: 1b3aa041ee6baae439538ab45e518a7d
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 5862516963691924014}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-900082093726184106
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -223,6 +242,7 @@ AudioMixerSnapshotController:
   m_FloatValues:
     4a6b2de207f784d41839503f756d60b0: 0
     ea58e079d71af4b16a62e89ad8bccbdb: 5.8
+    bcdc431a0b2344d549c856da225ca3fe: -0.18619981
     c93c33fdeb63c4d38adffb23bcf39dda: -65
   m_TransitionOverrides: {}
 --- !u!244 &-120171903506279726
@@ -274,6 +294,7 @@ AudioMixerController:
     - 0d860706fab844d00be63d88a0ba37a0
     - 715ad318bf9984a269cded06c750dd2b
     - 934a462f662d340d4996527658751d7d
+    - 2d81126031f5dff4d89e9a290983c27a
     name: All
   m_CurrentViewIndex: 1
   m_TargetSnapshot: {fileID: -850709288972476851}
@@ -400,6 +421,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &5862516963691924014
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 75d085b2f11885d478ddfc230ab0abca
+  m_EffectName: Attenuation
+  m_MixLevel: 011e0d30d83bc19439b9fd8057d8b518
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &6366760826386020773
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -451,7 +486,8 @@ AudioMixerGroupController:
   m_Name: Enemies
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 7648c7653486844da99ed199dd54ae58
-  m_Children: []
+  m_Children:
+  - {fileID: -1548616429353298868}
   m_Volume: 76d727d32857e451a8816f4b24c62a97
   m_Pitch: 59459533312084ef1b90a8e674ff7d95
   m_Send: 00000000000000000000000000000000

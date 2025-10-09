@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292864141537876363}
   - component: {fileID: 4937501657943357315}
-  - component: {fileID: 7258719265425712223}
+  - component: {fileID: 6043509066257115893}
   m_Layer: 0
   m_Name: GoombaHead
   m_TagString: Untagged
@@ -61,14 +61,14 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   bounceForce: 10
---- !u!68 &7258719265425712223
-EdgeCollider2D:
+--- !u!61 &6043509066257115893
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7767268153065605263}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -91,19 +91,22 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.021321595, y: 0.4421649}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.70925534, y: 0.12435341}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.39513662, y: 0.4981031}
-  - {x: 0.42572215, y: 0.49810216}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1 &8019454002308517319
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +265,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.05745268}
+  m_Offset: {x: 0, y: -0.06014228}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -272,7 +275,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.88509464}
+  m_Size: {x: 1, y: 0.87971544}
   m_EdgeRadius: 0
 --- !u!114 &3911548810079430642
 MonoBehaviour:
@@ -330,10 +333,10 @@ AudioSource:
   m_GameObject: {fileID: 8019454002308517319}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1548616429353298868, guid: 77eada6299dc947abbe2249c71dd9b6d, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 8d044ccc9fbd847b08a67c4d0d817b0f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
