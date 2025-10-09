@@ -176,14 +176,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") & alive)
         {
+            // TODO: check that goomba is not stomped on
             Debug.Log("Collided with goomba!");
 
-            // play death animation
-            marioAnimator.Play("mario-death", 0);
-            marioAudio.PlayOneShot(marioDeath);
-            alive = false;
+            Die();
         }
     }
+
+    public void Die()
+    {
+        // Ideally, Mario is only receiver, this gets called when colliding with goomba (goomba handles the collision detection)
+        if (!alive) return;
+        alive = false;
+        // death animation
+        marioAnimator.Play("mario-death", 0);
+        marioAudio.PlayOneShot(marioDeath);
+    }
+
     void PlayDeathImpulse()
     {
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);

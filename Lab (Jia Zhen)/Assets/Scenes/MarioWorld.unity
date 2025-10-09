@@ -1876,7 +1876,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -5839125666873349224, guid: 77eada6299dc947abbe2249c71dd9b6d, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 90ceef20da9a84d9891da3179ede4177, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4961,7 +4961,7 @@ GameObject:
   - component: {fileID: 2127353720}
   m_Layer: 0
   m_Name: Mario
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4991,7 +4991,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &2127353710
 BoxCollider2D:
@@ -5517,6 +5517,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1253032546}
     m_Modifications:
+    - target: {fileID: 720341241670647959, guid: 25a6eed826c7f4c258d58fc873d14b81, type: 3}
+      propertyPath: m_Size.y
+      value: 0.84189117
+      objectReference: {fileID: 0}
+    - target: {fileID: 720341241670647959, guid: 25a6eed826c7f4c258d58fc873d14b81, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 720341241670647959, guid: 25a6eed826c7f4c258d58fc873d14b81, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.079054415
+      objectReference: {fileID: 0}
     - target: {fileID: 8019454002308517319, guid: 25a6eed826c7f4c258d58fc873d14b81, type: 3}
       propertyPath: m_Name
       value: Goomba
