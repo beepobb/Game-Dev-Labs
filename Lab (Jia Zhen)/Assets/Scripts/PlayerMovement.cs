@@ -3,14 +3,16 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    [SerializeField] private float speed = 10;
-    [SerializeField] private float maxSpeed = 20;
-    [SerializeField] private float upSpeed = 10;
+    public GameConstants gameConstants;
+    float deathImpulse;
+    float upSpeed;
+    float maxSpeed;
+    float speed;
     private bool moving = false;
 
     [Header("References")]
@@ -21,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector3 startPosition;
     [SerializeField] private AudioSource marioAudio;
     [SerializeField] private AudioClip marioDeath;
-    [SerializeField] private float deathImpulse = 15;
     private SpriteRenderer marioSprite;
     private Rigidbody2D marioBody;
     private bool faceRightState = true;
@@ -36,20 +37,37 @@ public class PlayerMovement : MonoBehaviour
     [System.NonSerialized]
     public bool alive = true;
 
+    // Start is called before the first frame update
+
     void Awake()
     {
-        startPosition = transform.position;
+        // other instructions
+        // subscribe to Game Restart event
+        GameManager.instance.gameRestart.AddListener(GameRestart);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
+        speed = gameConstants.speed;
+        maxSpeed = gameConstants.maxSpeed;
+        deathImpulse = gameConstants.deathImpulse;
+        upSpeed = gameConstants.upSpeed;
+        startPosition = gameConstants.marioStartingPosition;
         // Set to be 30 FPS
         Application.targetFrameRate = 30;
         marioBody = GetComponent<Rigidbody2D>();
         marioSprite = GetComponentInChildren<SpriteRenderer>();
         marioAnimator.SetBool("onGround", onGroundState);
     }
+
+    // public void SetStartingPosition(Scene current, Scene next)
+    // {
+    //     if (next.name == "World-1-2")
+    //     {
+    //         // change the position accordingly in your World-1-2 case
+    //         this.transform.position = startPosition;
+    //     }
+    // }
 
     // FixedUpdate is called 50 times a second
     void FixedUpdate()

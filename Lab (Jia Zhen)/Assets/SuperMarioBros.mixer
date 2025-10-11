@@ -306,6 +306,7 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: -850709288972476851}
   - {fileID: 24500006}
+  - {fileID: 7478284391049441478}
   m_StartSnapshot: {fileID: -850709288972476851}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -332,7 +333,7 @@ AudioMixerController:
     - 2d81126031f5dff4d89e9a290983c27a
     name: All
   m_CurrentViewIndex: 1
-  m_TargetSnapshot: {fileID: -850709288972476851}
+  m_TargetSnapshot: {fileID: 7478284391049441478}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -612,6 +613,29 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &7478284391049441478
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Quiet
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: df5a20431afb94091971272fd3922559
+  m_FloatValues:
+    2645c31071098e547afef432ca59f4d5: 1.1
+    7a2a3f3025421f44b8c16234314f5fd3: 528.6519
+    4a6b2de207f784d41839503f756d60b0: 0
+    3deab9f67a2363a4ca145fd1a2d45230: 45
+    83efb727058928440b289a06697b6a50: 1.9039993
+    3f85481882c7e57479f5d9414d846d87: -15.4
+    ea58e079d71af4b16a62e89ad8bccbdb: 5.8
+    bcdc431a0b2344d549c856da225ca3fe: -9.960263
+    8e990bcbe81816f4e9c56cd7fc5e97bc: 882
+    c93c33fdeb63c4d38adffb23bcf39dda: -65
+    7356d54e7f6c7cf4bbe25124695ed3b9: -9816
+    96e0078fb0fdd0141a9705771abed792: 0.1
+  m_TransitionOverrides: {}
 --- !u!243 &7822719049742769442
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

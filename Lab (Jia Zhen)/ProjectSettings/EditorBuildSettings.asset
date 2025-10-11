@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MarioWorld.unity
+    path: Assets/Scenes/World-1-1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/World-1-2.unity
+    guid: c5824d9218e064f678c19e8927a26a76
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 63dcab95f89134f2185933f078e60540, type: 3}
   m_UseUCBPForAssetBundles: 0
