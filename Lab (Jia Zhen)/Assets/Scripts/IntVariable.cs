@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "IntVariable", menuName = "ScriptableObjects/IntVariable", order = 2)]
 public class IntVariable : Variable<int>
 {
 
     public int previousHighestValue;
+    public UnityEvent onValueChanged;
     public override void SetValue(int value)
     {
         if (value > previousHighestValue) previousHighestValue = value;
@@ -31,6 +33,7 @@ public class IntVariable : Variable<int>
     public void ResetHighestValue()
     {
         previousHighestValue = 0;
+        onValueChanged?.Invoke();
     }
 
 }

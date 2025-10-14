@@ -324,6 +324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42b4b9634eb34863939ad8b4214e382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Goomba
+  minPitch: 0.95
+  maxPitch: 1.05
+  minVolume: 0.9
+  maxVolume: 1
 --- !u!82 &8346677337649377628
 AudioSource:
   m_ObjectHideFlags: 0

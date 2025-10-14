@@ -7,6 +7,9 @@ public class EnemyManager : MonoBehaviour
     void Awake()
     {
         // other instructions
+        // Error: null reference exception
+        // Right now GameManager.instance is null when EnemyManager.Awake runs
+        // Fix: script execution order places GameManager.cs first
         GameManager.instance.gameRestart.AddListener(GameRestart);
     }
 

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SMBConstants
   m_EditorClassIdentifier: Assembly-CSharp::GameConstants
   maxLives: 10
-  speed: 150
+  speed: 149
   maxSpeed: 5
   upSpeed: 30
-  deathImpulse: 45
+  deathImpulse: 46
   marioStartingPosition: {x: -5.73037, y: 0.7, z: 0}
   goombaPatrolTime: 2
   goombaMaxOffset: 5

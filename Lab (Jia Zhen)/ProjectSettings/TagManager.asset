@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - TopCollider
   - Manager
+  - Start Game
+  - Reset High Score
   layers:
   - Default
   - TransparentFX

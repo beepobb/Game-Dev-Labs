@@ -37,8 +37,9 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1.0f;
     }
 
-    public void IncreaseScore(int increment)
+    public void IncreaseScore()
     {
+        Debug.Log("Increase Score");
         gameScore.ApplyChange(1);
         SetScore();
     }
