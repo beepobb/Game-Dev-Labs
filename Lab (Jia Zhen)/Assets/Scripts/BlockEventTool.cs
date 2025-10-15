@@ -2,16 +2,10 @@ using UnityEngine;
 
 public class BlockEventTool : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        // subscribe to Game Restart event
+        GameManager.instance.gameRestart.AddListener(ResetChildBlocks);
     }
 
     public void ResetChildBlocks()

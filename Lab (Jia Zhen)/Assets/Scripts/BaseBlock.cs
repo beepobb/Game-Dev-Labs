@@ -43,6 +43,7 @@ public class BaseBlock : MonoBehaviour
         {
             coinAnimator.SetTrigger("blockHit");
             coinSpawnAudio.Play();
+            GameManager.instance.IncreaseScore(); // Increase score when coin is spawned
         }
     }
 

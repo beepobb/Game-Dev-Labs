@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Debug.Log("MainMenu Start called");
+        gameScore.Value = 0; // reset score
         Debug.Log("Current high score: " + gameScore.previousHighestValue);
         UpdateHighScoreText();
     }

@@ -7,11 +7,13 @@ public abstract class BasePowerup : MonoBehaviour, IPowerup
     public bool spawned = false;
     protected bool consumed = false;
     protected bool goRight = true;
+    protected Collider2D col;
     protected Rigidbody2D rigidBody;
 
     // base methods
     protected virtual void Start()
     {
+        col = GetComponent<Collider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
 

@@ -20,17 +20,6 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.gameOver.AddListener(GameOver);
         GameManager.instance.gameRestart.AddListener(GameStart);
         GameManager.instance.scoreChange.AddListener(SetScore);
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void GameStart()

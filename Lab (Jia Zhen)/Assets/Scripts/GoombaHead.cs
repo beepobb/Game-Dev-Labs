@@ -40,6 +40,9 @@ public class GoombaHead : MonoBehaviour
 
                 // Trigger any onStomped logic
                 onStomped?.Invoke();
+
+                // Increase game score for killing goomba
+                GameManager.instance.IncreaseScore();
             }
             else
             {

@@ -23,7 +23,6 @@ public class GameManager : Singleton<GameManager>
 
     public void SceneSetup(Scene current, Scene next)
     {
-        gameScore.Value = 0;
         gameStart.Invoke();
         SetScore();
     }
@@ -33,8 +32,10 @@ public class GameManager : Singleton<GameManager>
         // reset score
         gameScore.Value = 0;
         SetScore();
-        gameRestart.Invoke();
+
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // gameRestart.Invoke();
     }
 
     public void IncreaseScore()
@@ -46,7 +47,7 @@ public class GameManager : Singleton<GameManager>
 
     public void SetScore()
     {
-        scoreChange.Invoke(gameScore.Value);
+        scoreChange.Invoke(gameScore.Value); // post-score update
     }
 
 

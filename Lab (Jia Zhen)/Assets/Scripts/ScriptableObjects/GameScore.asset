@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameScore
   m_EditorClassIdentifier: Assembly-CSharp::IntVariable
   DeveloperDescription: This object holds current game score
-  previousHighestValue: 4
+  previousHighestValue: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
